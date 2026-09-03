@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartTrack IoT - Hardware Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#dae2fd",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#006242",
+                        "on-secondary-container": "#5c647a",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-fixed": "#002113",
+                        "surface": "#f7f9fb",
+                        "secondary": "#565e74",
+                        "outline": "#737686",
+                        "tertiary-fixed": "#6ffbbe",
+                        "background": "#f7f9fb",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#dae2fd",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#007d55",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#bdffdb",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#eeefff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface-tint": "#0053db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "container-max": "1440px",
+                        "xl": "40px",
+                        "md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "headline-sm": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "mono-data": ["monospace"],
+                        "display-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                        "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono-data": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest border-r border-outline-variant h-screen w-64 fixed left-0 top-0 flex flex-col py-lg z-20">
+<div class="px-md mb-8">
+<h1 class="font-display-md text-display-md font-bold text-primary">SmartTrack IoT</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Admin Console</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center px-md py-3 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">videocam</span> Live Gate Feed
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-3 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">fact_check</span> Attendance
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-3 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">group</span> Students
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-3 text-primary font-bold border-l-2 border-primary bg-surface-container-high transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">router</span> Hardware
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-3 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">layers</span> Zones
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-3 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">settings</span> Settings
+                    </a>
+</li>
+</ul>
+</div>
+<div class="px-md mt-auto pt-4">
+<div class="flex items-center bg-tertiary-fixed-dim/20 text-tertiary px-3 py-2 rounded-lg font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-2"></span>
+                System Status: Active
+            </div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-outline-variant flex justify-between items-center px-lg z-10">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Dashboard</div>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search devices..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-opacity opacity-90 hover:opacity-100 p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity opacity-90 hover:opacity-100 p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Administrator Avatar" class="w-full h-full object-cover" data-alt="A small, professional headshot portrait of a system administrator in a brightly lit, modern office setting. The person is looking directly at the camera with a neutral, focused expression. High resolution, sharp focus, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJuWNNvwQcsT67UgshtmyI7KomnYzdclslh0nU-jxuGqrHG7-r6usLrvLJHEsxmXELhdLn20XMI5sK797UgXPtRlWLAjo-ixUXZQ9hmfc4zGO_XUspZ3Ql00-uFTXsdZmx5msxh0q-XU8Ja3F8JcUZFJ9xJ3jXOsFVqggwaOemGyKQcXbnkDviywXNQGIUAHr-PqFvakRidVIQrY_yNY9-75vz5sYDsdL15xJ-cAN6QRKRBazqdk2c"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-lg h-[calc(100vh-4rem)] overflow-y-auto">
+<div class="max-w-container-max mx-auto space-y-lg">
+<!-- Health Summary Header -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-sm">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="text-on-surface-variant font-label-md text-label-md mb-1">Total Readers</div>
+<div class="font-display-md text-display-md text-on-surface">142</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md border-l-2 border-l-tertiary">
+<div class="text-on-surface-variant font-label-md text-label-md mb-1">Online</div>
+<div class="font-display-md text-display-md text-tertiary">138</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md border-l-2 border-l-error">
+<div class="text-on-surface-variant font-label-md text-label-md mb-1">Offline / Error</div>
+<div class="font-display-md text-display-md text-error">4</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="text-on-surface-variant font-label-md text-label-md mb-1">Avg Response Time</div>
+<div class="font-display-md text-display-md text-on-surface">24ms</div>
+</div>
+</div>
+<!-- Device Grid -->
+<div class="flex justify-between items-end mb-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Hardware Readers</h2>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant text-secondary font-label-md text-label-md rounded-DEFAULT hover:bg-surface-container transition-colors flex items-center">
+<span class="material-symbols-outlined mr-2" style="font-size: 18px; font-variation-settings: 'FILL' 0;">filter_list</span> Filter
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT hover:bg-primary/90 transition-colors flex items-center">
+<span class="material-symbols-outlined mr-2" style="font-size: 18px;">add</span> Add Device
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Device Card: Online -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary rounded-l-lg"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Gate 01 - Main Entrance</h3>
+<p class="font-mono-data text-mono-data text-on-surface-variant text-[11px] mt-1">ID: RDR-10492</p>
+</div>
+<span class="bg-tertiary-fixed-dim/20 text-tertiary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm flex items-center">
+                            Online
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Signal</div>
+<div class="font-mono-data text-mono-data text-on-surface mt-1 flex items-center">
+<span class="material-symbols-outlined text-tertiary mr-1" style="font-size: 14px;">signal_cellular_4_bar</span> -42 dBm
+                            </div>
+</div>
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Firmware</div>
+<div class="font-mono-data text-mono-data text-on-surface mt-1">v2.4.1</div>
+</div>
+</div>
+<div class="mt-auto flex gap-2 pt-2 border-t border-outline-variant/50">
+<button class="flex-1 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container transition-colors">Configure</button>
+<button class="flex-1 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container transition-colors">Restart</button>
+</div>
+</div>
+<!-- Device Card: Offline -->
+<div class="bg-surface-container-lowest border border-error/50 rounded-lg p-md flex flex-col relative bg-error-container/10">
+<div class="absolute top-0 left-0 w-1 h-full bg-error rounded-l-lg"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Library West Wing</h3>
+<p class="font-mono-data text-mono-data text-on-surface-variant text-[11px] mt-1">ID: RDR-09221</p>
+</div>
+<span class="bg-error-container text-on-error-container px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm flex items-center">
+                            Offline
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Signal</div>
+<div class="font-mono-data text-mono-data text-error mt-1 flex items-center">
+<span class="material-symbols-outlined text-error mr-1" style="font-size: 14px;">signal_cellular_off</span> N/A
+                            </div>
+</div>
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Last Seen</div>
+<div class="font-mono-data text-mono-data text-on-surface mt-1">2h ago</div>
+</div>
+</div>
+<div class="mt-auto flex gap-2 pt-2 border-t border-outline-variant/50">
+<button class="flex-1 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container transition-colors">Logs</button>
+<button class="flex-1 py-1.5 bg-error text-on-error font-label-sm text-label-sm rounded-DEFAULT hover:bg-error/90 transition-colors">Force Restart</button>
+</div>
+</div>
+<!-- Device Card: Online (Warning) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col relative group">
+<div class="absolute top-0 left-0 w-1 h-full bg-yellow-500 rounded-l-lg"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-label-md text-label-md font-bold text-on-surface">Cafeteria South</h3>
+<p class="font-mono-data text-mono-data text-on-surface-variant text-[11px] mt-1">ID: RDR-11002</p>
+</div>
+<span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm flex items-center">
+                            Weak Signal
+                        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-4">
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Signal</div>
+<div class="font-mono-data text-mono-data text-yellow-600 mt-1 flex items-center">
+<span class="material-symbols-outlined text-yellow-500 mr-1" style="font-size: 14px;">signal_cellular_1_bar</span> -89 dBm
+                            </div>
+</div>
+<div class="bg-surface p-2 rounded-DEFAULT border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Firmware</div>
+<div class="font-mono-data text-mono-data text-on-surface mt-1">v2.3.9 <span class="text-error text-[10px] ml-1">(Update)</span></div>
+</div>
+</div>
+<div class="mt-auto flex gap-2 pt-2 border-t border-outline-variant/50">
+<button class="flex-1 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container transition-colors">Configure</button>
+<button class="flex-1 py-1.5 bg-surface-container-lowest border border-outline-variant text-secondary font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container transition-colors">Restart</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

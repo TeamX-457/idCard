@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartTrack IoT - Student Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary-container": "#dae2fd",
+                      "surface-container": "#eceef0",
+                      "on-secondary-fixed": "#131b2e",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#006242",
+                      "on-secondary-container": "#5c647a",
+                      "inverse-primary": "#b4c5ff",
+                      "on-tertiary-fixed": "#002113",
+                      "surface": "#f7f9fb",
+                      "secondary": "#565e74",
+                      "outline": "#737686",
+                      "tertiary-fixed": "#6ffbbe",
+                      "background": "#f7f9fb",
+                      "primary-container": "#2563eb",
+                      "secondary-fixed": "#dae2fd",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "error": "#ba1a1a",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#007d55",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-low": "#f2f4f6",
+                      "on-surface": "#191c1e",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-surface": "#2d3133",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#004ac6",
+                      "on-surface-variant": "#434655",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-dim": "#d8dadc",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#00174b",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary-container": "#eeefff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-tint": "#0053db"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "base": "4px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "container-max": "1440px",
+                      "xl": "40px",
+                      "md": "16px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "mono-data": [
+                              "monospace"
+                      ],
+                      "display-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for data tables to maintain clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-low h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline z-20 flex flex-col py-lg">
+<div class="px-md mb-xl">
+<h1 class="font-display-md text-display-md font-bold text-primary dark:text-primary-fixed">SmartTrack IoT</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Admin Console</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">videocam</span>
+                        Live Gate Feed
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">fact_check</span>
+                        Attendance
+                    </a>
+</li>
+<li>
+<!-- Active State -->
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-primary dark:text-primary-fixed font-bold border-l-2 border-primary dark:border-primary-fixed bg-surface-container-high font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3" data-weight="fill">group</span>
+                        Students
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">router</span>
+                        Hardware
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">layers</span>
+                        Zones
+                    </a>
+</li>
+<li>
+<a class="flex items-center px-md py-2 mx-2 rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+                        Settings
+                    </a>
+</li>
+</ul>
+</div>
+<div class="px-md mt-auto pt-4 border-t border-outline-variant">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center mr-3 overflow-hidden">
+<img alt="System Administrator Profile" class="object-cover w-full h-full" data-alt="A small, professional headshot of an administrator in a modern office setting. The lighting is bright and clean, typical of an enterprise software interface avatar. The background is a soft, blurred neutral color. The person is smiling slightly, projecting competence and approachability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDebqZwd1llUsAI1lHIAjkybgR1vUeco_LlshOAzOXXpcAWtaCU0ErrdlXfPg7-1M59-bJCjWkl7ncUMPJFgPYiCUF9JSzChSPfPxOVQr2I_dyxBOZLzm0bR23zOcxuooWvqnQ4yCpD-8lSCUYwGduV7kL8vxe4cCLJxHiEWW6_LXG0ZAyVwNizkC-Uh_4c1dwSYYsBJ4c3ByMMvzi9FKlOjjaR_Z-y_w8_tdewfjrfyvm8yM6zbdpZ"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">System Status: Active</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline h-16 flex justify-between items-center px-lg z-10 flex-shrink-0">
+<div class="flex items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface mr-6">Dashboard</h2>
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-64 transition-shadow" placeholder="Search students, IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-opacity opacity-90 hover:opacity-100 p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-opacity opacity-90 hover:opacity-100 p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-2">
+<img alt="Administrator Avatar" class="object-cover w-full h-full" data-alt="A tiny profile avatar image showing a generic placeholder person icon in a minimalist grey and white style, suitable for a top navigation bar in a professional web application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_iATStb4G_S8e05GkhQ7B2zei5dawTAYSixqZJM1qTZWFnxSY4-gtRMbgoV2QtPXwyCvQiTMTYhbS5petw091HE3mUvjmgtPjdoK2vPLTzfHr-GSFXc1HaJrG-cJtRi_R3atu3yBdlIggHI2TuTwktVTmzOLM5x1LtiTV5nuPK4D0Fl0jNHf73nv5bQVzg0MAtloVb5zVqf35Mw9Gh0gEgforg9nrx65BUiL67l7sXyvE982Rw3zU"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-auto p-lg bg-background flex gap-lg">
+<!-- Left Side: Student List (Bento-style Container) -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden h-full">
+<!-- Table Header/Toolbar -->
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest flex-shrink-0">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Student Directory</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Manage IDs and access tags</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg flex items-center hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">add</span>
+                        Add New Student
+                    </button>
+</div>
+<!-- Data Table -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low sticky top-0 z-10">
+<tr>
+<th class="p-sm px-md font-label-sm text-label-sm text-on-surface-variant border-b border-outline-variant font-medium">Student</th>
+<th class="p-sm px-md font-label-sm text-label-sm text-on-surface-variant border-b border-outline-variant font-medium">ID Number</th>
+<th class="p-sm px-md font-label-sm text-label-sm text-on-surface-variant border-b border-outline-variant font-medium">Grade</th>
+<th class="p-sm px-md font-label-sm text-label-sm text-on-surface-variant border-b border-outline-variant font-medium">Assigned Tag ID</th>
+<th class="p-sm px-md font-label-sm text-label-sm text-on-surface-variant border-b border-outline-variant font-medium">Tag Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant">
+<!-- Row 1 (Selected/Active) -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors bg-secondary-container/20 border-l-2 border-l-primary">
+<td class="p-sm px-md">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim mr-3 overflow-hidden">
+<img alt="Student Photo" class="object-cover w-full h-full" data-alt="A small, square portrait of a high school student. The student looks engaged and friendly. The background is a clean, neutral school hallway or plain studio backdrop. The lighting is clear and professional, typical of a student ID photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxBP0lXCblDEz1eG8W6hj1Y1HVVrQSHch6x_9vRQoBEdFaW9lqCUSsIUJadZlg-E3sXjyWJQ3BK511Sp8nL4DAodVhsT-b_seQCXbKXbxfBrL1X3tuF18TjIZih_w5M8uyXgu4te_rC69ATC1ucNOtxFnhyTlFEm6gnvcKnU5KGRJmSAAW8oaR3t9MTd-qXl9UrQANXuvVy1ZhlR7y6f3JwXypSOGqvCARvqffSVm6l-gSdhuNjt-7"/>
+</div>
+<span class="font-medium text-on-surface">Emma Thompson</span>
+</div>
+</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant">STU-24901</td>
+<td class="p-sm px-md text-on-surface-variant">11th</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant">TAG-A49X</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-1.5"></span>
+                                        Active
+                                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors border-l-2 border-l-transparent">
+<td class="p-sm px-md">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant mr-3 overflow-hidden flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<span class="font-medium text-on-surface">Marcus Johnson</span>
+</div>
+</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant">STU-24902</td>
+<td class="p-sm px-md text-on-surface-variant">10th</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant">TAG-B12Y</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-1.5"></span>
+                                        Active
+                                    </span>
+</td>
+</tr>
+<!-- Row 3 (Inactive) -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors border-l-2 border-l-transparent">
+<td class="p-sm px-md">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant mr-3 overflow-hidden flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<span class="font-medium text-on-surface">Sophia Lee</span>
+</div>
+</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant">STU-24905</td>
+<td class="p-sm px-md text-on-surface-variant">12th</td>
+<td class="p-sm px-md font-mono-data text-mono-data text-on-surface-variant text-error">Unassigned</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-error mr-1.5"></span>
+                                        Inactive
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Side: Profile Quick-View Sidebar -->
+<div class="w-80 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm flex flex-col overflow-hidden flex-shrink-0">
+<!-- Profile Header -->
+<div class="p-lg bg-surface-container-low border-b border-outline-variant flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-surface-container-lowest shadow-sm overflow-hidden mb-3">
+<img alt="Emma Thompson Profile" class="object-cover w-full h-full" data-alt="A clear, professional student ID photograph of a young woman with a neutral but pleasant expression. The background is a solid, light grey color. The lighting is even and flat, typical of an official identification card." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDpd82ToootZQtd_GUiCcBs8dILtcDoTIfrhNl_-QLKN-w2Ta3MSEfGsaarkfOSoFh0aWWMQp2MpZ7Xejv1d12tmIfkW7ed58hc7dcKf2zvBOGktjzuFoQSeW1h3wU9IdPgH2X3oUTZG8ULG8YLQo70JX0hZKJJ7etLBOAacJD2NEHSzxlobbBqgjlkDRuHJreYuNv32fqcGuc7aj0YJ-0-tiLMK255O5zikl3-6rC5_f_Q2XbPFVn"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Emma Thompson</h3>
+<p class="font-mono-data text-mono-data text-on-surface-variant mt-1">ID: STU-24901</p>
+<div class="mt-4 flex space-x-2">
+<button class="px-3 py-1.5 bg-surface-container border border-outline-variant rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container-high transition-colors">Edit Profile</button>
+<button class="px-3 py-1.5 bg-surface-container border border-outline-variant rounded-lg font-label-sm text-label-sm text-error hover:bg-error-container transition-colors">Revoke Tag</button>
+</div>
+</div>
+<!-- Profile Details -->
+<div class="p-lg flex-1 overflow-auto">
+<div class="mb-6">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Tag Information</h4>
+<div class="bg-surface-container rounded-lg p-md border border-outline-variant">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface">Tag ID</span>
+<span class="font-mono-data text-mono-data text-primary">TAG-A49X</span>
+</div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-on-surface">Status</span>
+<span class="font-label-sm text-label-sm text-tertiary-container flex items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span> Active
+                                </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Last Scanned</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant">Today, 08:14 AM</span>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Academic Info</h4>
+<div class="space-y-3">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Grade Level</p>
+<p class="font-body-md text-body-md text-on-surface">11th Grade</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Homeroom</p>
+<p class="font-body-md text-body-md text-on-surface">Room 302 (Mr. Davis)</p>
+</div>
+</div>
+</div>
+<!-- Digital ID Card Preview Component -->
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Digital ID Preview</h4>
+<div class="bg-[#0f172a] rounded-lg p-4 text-white relative overflow-hidden shadow-[0_4px_6px_-1px_rgb(0,0,0,0.05)]">
+<!-- Subtle geometric background for the ID card -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
+<div class="absolute -left-4 -bottom-4 w-16 h-16 bg-tertiary/20 rounded-full blur-lg"></div>
+<div class="relative z-10 flex justify-between items-start mb-4 border-b border-white/10 pb-2">
+<div>
+<p class="font-label-sm text-label-sm text-white/70">SmartTrack Academy</p>
+<p class="font-label-md text-label-md font-bold">Student ID</p>
+</div>
+<span class="material-symbols-outlined text-white/50">qr_code_scanner</span>
+</div>
+<div class="relative z-10 flex items-center">
+<div class="w-12 h-12 rounded border border-white/20 mr-3 overflow-hidden">
+<img alt="Student Photo Thumbnail" class="object-cover w-full h-full" data-alt="A small, stylized digital representation of a student portrait inside a digital ID card mockup. The image is clear and professional, with a slightly modern, tech-focused blue tint to match the dark blue UI of the ID card design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVB8Cj_s18MsuFP_Xo-9aUi_QRZfZco3ISa1K9raYNU6pDoQ5u1VrI6IhfJoTccy2GNes3i67UULclmzfJW97qvfZ7niHssBixuaEm_1HNgu8Pb0PBLJVfWvi7h4M_3QrQuL1GntBpSMkUcyolUbNkeZImQSQWYP18M9bHoVRj-cgvIYb5bmqo3gGVfKVbuvEejaNvIS-ZI7On_cs1_zukf-cLTQQjKuhrkmQqmTSMjDb5NeqozSnO"/>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium">Emma Thompson</p>
+<p class="font-mono-data text-mono-data text-white/70 text-xs">ID: STU-24901</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

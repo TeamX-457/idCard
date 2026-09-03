@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartTrack IoT - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+        
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary-container": "#dae2fd",
+                      "surface-container": "#eceef0",
+                      "on-secondary-fixed": "#131b2e",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#006242",
+                      "on-secondary-container": "#5c647a",
+                      "inverse-primary": "#b4c5ff",
+                      "on-tertiary-fixed": "#002113",
+                      "surface": "#f7f9fb",
+                      "secondary": "#565e74",
+                      "outline": "#737686",
+                      "tertiary-fixed": "#6ffbbe",
+                      "background": "#f7f9fb",
+                      "primary-container": "#2563eb",
+                      "secondary-fixed": "#dae2fd",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "error": "#ba1a1a",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#007d55",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-low": "#f2f4f6",
+                      "on-surface": "#191c1e",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-surface": "#2d3133",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#004ac6",
+                      "on-surface-variant": "#434655",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-dim": "#d8dadc",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#00174b",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary-container": "#eeefff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-tint": "#0053db"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "base": "4px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "container-max": "1440px",
+                      "xl": "40px",
+                      "md": "16px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "headline-sm": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "mono-data": [
+                              "monospace"
+                      ],
+                      "display-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest border-r border-outline-variant h-screen w-64 fixed left-0 top-0 flex flex-col py-lg z-20 hidden md:flex">
+<div class="px-md mb-8">
+<h1 class="font-display-md text-display-md font-bold text-primary">SmartTrack IoT</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Admin Console</p>
+</div>
+<ul class="flex-1 flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+                    Live Gate Feed
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                    Attendance
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Students
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="router">router</span>
+                    Hardware
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+                    Zones
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-md py-sm text-primary font-bold border-l-2 border-primary bg-surface-container-high transition-colors duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined fill" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="px-md mt-auto pt-lg border-t border-outline-variant/30 flex items-center gap-3">
+<img alt="System Administrator Profile" class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional headshot avatar of a system administrator in a well-lit, modern office environment. High resolution, crisp focus, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYnkS-qwnCnOtOvcyrpVXa1rP8OrPNuCSXw0HGwfj_T0lxqWZ-bHQX2Z40Xnyu2hSZQmanfiVKyAg6rqomiAwn3VTSwbOO-UbZQjhqs3jo5Ksquu9DJvYrZIKXsL7KNpUfzq1cBmhr7--yyxM3qlcCgwm4FIsDXMys7FJhFdG2b0i469zPRiLysf5w76LC5cBSBTvhNLhGdncBKWodFAUeG7_HvOiLcSw-CbkLVvCgqMKG2-SbELdY"/>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">System Status: Active</div>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] h-16 border-b border-outline-variant flex justify-between items-center px-lg z-10 hidden md:flex">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Dashboard</div>
+<div class="flex items-center gap-lg">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary opacity-90 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary opacity-90 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small, professional headshot avatar of a system administrator in a well-lit, modern office environment. High resolution, crisp focus, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfJZ9tWZ6_X150-q5rO0JKHetcpibz9alie2Uo4fpBvbQGFsmMeh_pyL3KC4Vg7nNPafymRDV3z2jcYo0ofJkE0JDOn6D7DZe4hRa8mXOSjyJaEkJuD4sScWzMc1tc4qaUma_rhonRFJHurryAMTqJPLnRCYaoGGD3TWpA_5U4HQMfGRGAN_WvAuqTrr2c_6xu7xe059OV6N4kOqxLcvfSJawfdKmw6-oo_0XxUWx2TLW3R9_anES3"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 ml-0 md:ml-64 pt-16 p-lg md:p-xl h-screen overflow-y-auto">
+<div class="max-w-container-max mx-auto space-y-lg pb-xl">
+<div class="mb-xl">
+<h2 class="font-display-lg text-display-lg text-on-background mb-2">System Settings</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Manage global configuration, integrations, and access controls for the SmartTrack environment.</p>
+</div>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- General Configuration -->
+<section class="col-span-1 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm">
+<div class="flex items-center gap-3 pb-sm border-b border-outline-variant/50">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">General Configuration</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md mt-2">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Institution Name</label>
+<input class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all" type="text" value="Riverside High School"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">System Timezone</label>
+<select class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all">
+<option>America/New_York (EST)</option>
+<option>America/Chicago (CST)</option>
+<option>America/Denver (MST)</option>
+<option>America/Los_Angeles (PST)</option>
+</select>
+</div>
+<div class="space-y-1 sm:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Support Email</label>
+<input class="w-full bg-surface border border-outline-variant rounded-md px-3 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all" type="email" value="admin@riverside-smarttrack.edu"/>
+</div>
+</div>
+<div class="mt-auto pt-sm flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">Save Changes</button>
+</div>
+</section>
+<!-- Notifications -->
+<section class="col-span-1 md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm">
+<div class="flex items-center gap-3 pb-sm border-b border-outline-variant/50">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="campaign">campaign</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Alert Rules</h3>
+</div>
+<div class="space-y-4 mt-2">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center mt-1">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant rounded-full peer-checked:bg-primary transition-colors"></div>
+<div class="absolute left-1 top-1 bg-surface-container-lowest w-3 h-3 rounded-full transition-transform peer-checked:translate-x-5"></div>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Late Arrival SMS</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px] mt-0.5">Notify parents automatically if student scans in after 8:15 AM.</div>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center mt-1">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant rounded-full peer-checked:bg-primary transition-colors"></div>
+<div class="absolute left-1 top-1 bg-surface-container-lowest w-3 h-3 rounded-full transition-transform peer-checked:translate-x-5"></div>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Unrecognized ID Email</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px] mt-0.5">Send alert to security desk when an invalid card is presented.</div>
+</div>
+</label>
+</div>
+</section>
+<!-- API & Webhooks -->
+<section class="col-span-1 md:col-span-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm">
+<div class="flex items-center gap-3 pb-sm border-b border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary" data-icon="api">api</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">API &amp; Webhooks</h3>
+</div>
+<div class="space-y-md mt-2">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">SIS Integration Endpoint (PowerSchool)</label>
+<div class="flex">
+<input class="w-full bg-surface-container-low border border-r-0 border-outline-variant rounded-l-md px-3 py-2 font-mono-data text-mono-data text-on-surface-variant focus:outline-none" readonly="" type="text" value="https://api.powerschool.com/v1/attendance/sync"/>
+<button class="bg-surface-variant text-on-surface-variant border border-outline-variant rounded-r-md px-3 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">API Key</label>
+<div class="flex">
+<input class="w-full bg-surface-container-low border border-r-0 border-outline-variant rounded-l-md px-3 py-2 font-mono-data text-mono-data text-on-surface-variant focus:outline-none" readonly="" type="password" value="sk_test_51NxXXXXXXXXXXXXXXXXXXXXX"/>
+<button class="bg-surface border border-outline-variant rounded-r-md px-3 text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">Regenerate</button>
+</div>
+</div>
+</div>
+</section>
+<!-- User Management -->
+<section class="col-span-1 md:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col shadow-sm">
+<div class="flex items-center justify-between pb-sm border-b border-outline-variant/50 mb-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="admin_panel_settings">admin_panel_settings</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Admin Access</h3>
+</div>
+<button class="text-primary font-label-sm text-label-sm hover:underline">Invite Admin</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/50">
+<th class="py-2 px-3 font-label-sm text-label-sm text-on-surface-variant font-medium">User</th>
+<th class="py-2 px-3 font-label-sm text-label-sm text-on-surface-variant font-medium">Role</th>
+<th class="py-2 px-3 font-label-sm text-label-sm text-on-surface-variant font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<td class="py-2 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-[10px]">JD</div>
+                                        John Doe
+                                    </td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded-sm bg-primary/10 text-primary font-label-sm text-label-sm text-[11px]">Super Admin</span></td>
+<td class="py-2 px-3 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<td class="py-2 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-[10px]">AS</div>
+                                        Alice Smith
+                                    </td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded-sm bg-surface-variant text-on-surface-variant font-label-sm text-label-sm text-[11px]">Security Desk</span></td>
+<td class="py-2 px-3 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-2 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-[10px]">RJ</div>
+                                        Robert Johnson
+                                    </td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded-sm bg-surface-variant text-on-surface-variant font-label-sm text-label-sm text-[11px]">IT Support</span></td>
+<td class="py-2 px-3 text-right">
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>
