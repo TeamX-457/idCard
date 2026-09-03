@@ -16,7 +16,7 @@ jobs:
       - name: installing dependencies
         run: npm ci
       - name: installing eslint
-        run: npm install -D eslint
+        run: npm install -D eslint eslint-config-next
       - name: linting the app
         run: npm run lint
       - name: building the site
