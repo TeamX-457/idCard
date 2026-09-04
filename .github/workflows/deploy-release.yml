@@ -22,10 +22,13 @@ jobs:
     outputs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history needed for release notes generation
+
       - name: Setup and build
         uses: ./.github/actions/setup-and-build
-        with:
-          fetch-depth: '0'   # full history needed for release notes generation
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
