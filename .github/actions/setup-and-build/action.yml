@@ -13,12 +13,10 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ inputs.node-version }}
-        cache: npm
+        node-version: 24
 
     - name: Install dependencies
-      run: npm ci
-      shell: bash
+      run: npm install
 
     # - name: Lint
     #   run: npm run lint
@@ -26,4 +24,3 @@ runs:
 
     - name: Build
       run: npm run build
-      shell: bash
